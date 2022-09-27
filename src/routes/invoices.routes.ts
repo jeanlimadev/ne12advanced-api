@@ -1,9 +1,11 @@
 import { Router } from "express";
 
+import { CreateInvoiceController } from "../controllers/CreateInvoiceController";
+
 const invoicesRoutes = Router();
 
-invoicesRoutes.get("/", (request, response) => {
-  return response.json({ message: "Hello World!" })
-});
+const createInvoiceController = new CreateInvoiceController();
+
+invoicesRoutes.post("/", createInvoiceController.handle);
 
 export { invoicesRoutes };
