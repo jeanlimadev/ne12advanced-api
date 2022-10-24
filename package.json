@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/server.ts",
     "build": "tsc --build",
-    "build": "tsc"
+    "start": "tsc"
   },
   "devDependencies": {
     "@types/node": "^18.7.18",
