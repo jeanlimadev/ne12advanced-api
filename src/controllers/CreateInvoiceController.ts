@@ -5,40 +5,44 @@ class CreateInvoiceController {
   async handle(request: Request, response: Response): Promise<Response> {
     try {
       const {
-        invoiceNumber, 
-        amount,        
-        dueDate,        
-        recipient,     
-        pfOrPj,        
+        invoiceNumber,
+        amount,
+        dueDate,
+        recipient,
+        pfOrPj,
         documentNumber,
-        cep,           
+        cep,
         address,
+        accessKey,
       } = request.body;
-  
+
       const invoiceAlreadyExists = await prisma.invoice.findFirst({
         where: {
-          invoiceNumber
-        }
+          invoiceNumber,
+        },
       });
-  
+
       if (invoiceAlreadyExists) {
-        return response.status(400).json({ error: `Invoice ${invoiceNumber} already exists!` });
+        return response
+          .status(400)
+          .json({ error: `Invoice ${invoiceNumber} already exists!` });
       }
-  
+
       const invoice = await prisma.invoice.create({
         data: {
-          invoiceNumber, 
-          amount,        
-          dueDate,        
-          recipient,     
-          pfOrPj,        
+          invoiceNumber,
+          amount,
+          dueDate,
+          recipient,
+          pfOrPj,
           documentNumber,
-          cep,           
+          cep,
           address,
-        }
+          accessKey,
+        },
       });
-  
-      return response.status(201).json(invoice)
+
+      return response.status(201).json(invoice);
     } catch (error) {
       return response.status(400).json({ error: "Verify your request data." });
     }

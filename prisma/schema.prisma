@@ -20,4 +20,5 @@ model Invoice {
   documentNumber String
   cep            String
   address        String
+  accessKey      String
 }
