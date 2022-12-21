@@ -13,12 +13,14 @@ datasource db {
 model Invoice {
   id             String @id @default(uuid())
   invoiceNumber  String
-  amount         String
+  amount         Float
   dueDate        String
   recipient      String
-  pfOrPj         String
   documentNumber String
-  cep            String
   address        String
+  district       String
+  city           String
+  uf             String
+  cep            String
   accessKey      String
 }
