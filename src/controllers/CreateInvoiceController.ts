@@ -6,6 +6,7 @@ class CreateInvoiceController {
     try {
       const {
         invoiceNumber,
+        emission,
         amount,
         dueDate,
         recipient,
@@ -33,6 +34,7 @@ class CreateInvoiceController {
       const invoice = await prisma.invoice.create({
         data: {
           invoiceNumber,
+          emission,
           amount,
           dueDate,
           recipient,

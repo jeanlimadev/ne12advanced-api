@@ -13,6 +13,7 @@ datasource db {
 model Invoice {
   id             String @id @default(uuid())
   invoiceNumber  String
+  emission       String
   amount         Float
   dueDate        String
   recipient      String
