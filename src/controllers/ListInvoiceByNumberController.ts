@@ -6,17 +6,17 @@ class ListInvoiceByNumber {
   async handle(request: Request, response: Response): Promise<Response> {
     const { number } = request.params;
 
-    const invoice = await prisma.invoice.findFirst({
+    const Invoice = await prisma.invoice.findFirst({
       where: {
         invoiceNumber: number
       }
     });
 
-    if (!invoice) {
+    if (!Invoice) {
       return response.status(404).json({ error: "Invoice not found!" });
     }
 
-    return response.json(invoice);
+    return response.json(Invoice);
   }
 }
 

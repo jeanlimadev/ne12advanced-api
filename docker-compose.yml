@@ -1,0 +1,22 @@
+version: "3.7"
+
+services:
+  database_inventory:
+    image: postgres
+    container_name: ne12advanced_db
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=Invoices
+    volumes:
+      - pgdata:/data/postgres
+    network_mode: host
+
+volumes:
+  pgdata:
+    driver: local

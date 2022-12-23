@@ -6,11 +6,11 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model Invoice {
+model invoice {
   id             String @id @default(uuid())
   invoiceNumber  String
   emission       String
