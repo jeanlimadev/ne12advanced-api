@@ -11,7 +11,7 @@ datasource db {
 }
 
 model invoice {
-  id             String @id @default(uuid())
+  id             String  @id @default(uuid())
   invoiceNumber  String
   emission       String
   amount         Float
@@ -24,4 +24,5 @@ model invoice {
   uf             String
   cep            String
   accessKey      String
+  ticketIssued   Boolean
 }

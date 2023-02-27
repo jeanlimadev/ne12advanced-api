@@ -45,6 +45,7 @@ class CreateInvoiceController {
           uf,
           cep,
           accessKey,
+          ticketIssued: false
         },
       });
 
