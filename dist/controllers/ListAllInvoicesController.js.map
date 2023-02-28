@@ -1,1 +1,0 @@
-{"version":3,"file":"ListAllInvoicesController.js","sourceRoot":"","sources":["../../src/controllers/ListAllInvoicesController.ts"],"names":[],"mappings":";;;;;;;;;;;;AACA,0CAAqC;AAGrC,MAAM,yBAAyB;IACvB,MAAM,CAAC,OAAgB,EAAE,QAAkB;;YAC/C,MAAM,WAAW,GAAG,MAAM,iBAAM,CAAC,OAAO,CAAC,QAAQ,EAAE,CAAC;YAEpD,OAAO,QAAQ,CAAC,IAAI,CAAC,WAAW,CAAC,CAAC;QACpC,CAAC;KAAA;CACF;AAEQ,8DAAyB"}
